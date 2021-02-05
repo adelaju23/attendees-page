@@ -1,0 +1,62 @@
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Attendees data</title>
+         
+     </head>
+    <body>
+        <div id="adv-section" style="background-color: rgb(238, 255, 0); text-align: center; padding-top: 2rem; height: 8rem;">
+            
+        </div>
+        
+           
+                <div>
+                    <label>Full name:</label><input type="text" name="attendeeFullName" id="attendeeFullName">
+                </div>
+                <div>
+                    <label>Company:</label><input type="text" name="attendeeCompany" id="attendeeCompany">
+                </div>
+                <div>
+                    <input type="button" value="Register">
+                    
+                </div>
+        
+            <div>
+                <input type="text" name="searchOnName" id="searchOnName"><input type="button" value="Search" onclick="searchOnServer();">
+           
+         
+     </body>
+    
+
+
+        
+    </div>
+
+<html>
+<script>
+    function addAttendee() {
+        var attendeeFullName = document.getElementById("attFullName").value;
+        attendee.push(attFullName);
+        attendee.sort();
+
+        displayAttendees();
+        document.getElementById("attFullName").value = "";
+    }
+
+      function displayAttendees() {
+        var body = document.getElementById("attendeeTableBody");
+        for (var i = 0; i < attendee.length; i++) {
+            var row = document.createElement("tr");
+            var cell = document.createElement("td");
+            cell.innerHTML = attendees[i];
+            body.appendChild(row);
+            row.appendChild(cell);
+            //document.getElementById("attFullName").value = "";//
+        } 
+    }
+    
+    </script>
+</body>
+    </html>
