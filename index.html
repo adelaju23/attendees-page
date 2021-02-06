@@ -1,62 +1,182 @@
-     <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Attendees data</title>
-         
-     </head>
-    <body>
-        <div id="adv-section" style="background-color: rgb(238, 255, 0); text-align: center; padding-top: 2rem; height: 8rem;">
-            
-        </div>
-        
-           
-                <div>
-                    <label>Full name:</label><input type="text" name="attendeeFullName" id="attendeeFullName">
-                </div>
-                <div>
-                    <label>Company:</label><input type="text" name="attendeeCompany" id="attendeeCompany">
-                </div>
-                <div>
-                    <input type="button" value="Register">
-                    
-                </div>
-        
-            <div>
-                <input type="text" name="searchOnName" id="searchOnName"><input type="button" value="Search" onclick="searchOnServer();">
-           
-         
-     </body>
-    
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendees data</title>
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: black;
+        }
 
 
-        
+        .navbar a {
+            float: left;
+            display: block;
+            color: rgb(211, 43, 226);
+            text-align: center;
+            padding: 20px 20px;
+            text-decoration: none;
+        }
+
+
+        .navbar a.right {
+            float: right;
+        }
+
+
+        .navbar a:hover {
+            background-color: brown;
+            color: black;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(238, 255, 0); text-align: center; padding-top: 2rem; height: 8rem;">
+    </div>
+    <div id="adv-section">
+
+        <h1 style="text-align: center; color: rgb(0, 68, 255);"> CONFERENCE REGISTRATION</h1>
+        <p style="text-align: center; color: rgb(0, 17, 255);"> ATTENDEES INFORMATION PAGE</p>
+        <P style="border: 0px; text-align: center; color: rgb(0, 38, 255);"> ATHENS GREECE</P>
+
     </div>
 
-<html>
-<script>
-    function addAttendee() {
-        var attendeeFullName = document.getElementById("attFullName").value;
-        attendee.push(attFullName);
-        attendee.sort();
+    <div class="navbar">
+        <a href="reservation.html">HOME</a>
 
-        displayAttendees();
-        document.getElementById("attFullName").value = "";
-    }
+        <a href="#">VENUES</a>
+        <a href="#">REGISTER</a>
+        <a href="registration.html" class="right">SignUp</a>
+        <a href="Attendees.html"> LISTOFATTENDEES</a>
+        <a href="#">SignUp"</a>
+    </div>
 
-      function displayAttendees() {
-        var body = document.getElementById("attendeeTableBody");
-        for (var i = 0; i < attendee.length; i++) {
-            var row = document.createElement("tr");
-            var cell = document.createElement("td");
-            cell.innerHTML = attendees[i];
-            body.appendChild(row);
-            row.appendChild(cell);
-            //document.getElementById("attFullName").value = "";//
-        } 
-    }
-    
+    <h1 style="text-align: center; color: rgb(0, 81, 255);">NEW ATTENDEES FOR 2021</h1>
+
+
+
+
+
+    </head>
+
+
+
+    <form>
+
+        <div>
+            <label>Firstname:</label><input type="text" name="attendeeFirstName" id="attendeeFirstName">
+        </div>
+
+        <div>
+            <label>Lastname</label><input type="text">
+            <div>
+                <label>Company</label><input type="text">
+            </div>
+            <div>
+                <label>Address</label><input type="text">
+            </div>
+            <div>
+                <label>Age</label><input type="text">
+            </div>
+            <input type="button" value="Register">
+            <input type="button" value="cancel">
+        </div>
+        <br>
+
+        <table border="1" id="attendeesTable" class="header">
+    </form>
+    </br>
+    <thead>
+
+        <tr>
+            <td>Firstname</td>
+            <td>Lastname</td>
+            <td>Company</td>
+            <td>Address</td>
+            <td>Age</td>
+
+            </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Adelaju</td>
+            <td>Fawole</td>
+            <td>it&com</td>
+            <td>united kingdom</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Theodoris</td>
+            <td>Osribin</td>
+            <td>Apple</td>
+            <td>Scotland</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Eneda</td>
+            <td>Schbemki</td>
+            <td>Mac</td>
+            <td>Ireland</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>Oluwole</td>
+            <td>Tosin</td>
+            <td>Slot</td>
+            <td>Germany</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Mina</td>
+            <td>Micah</td>
+            <td>Michano</td>
+            <td>Iraq</td>
+            <td>29</td>
+        </tr>
+        <tr>
+            <td>Oresti</td>
+            <td>Lucas</td>
+            <td>Opap</td>
+            <td>France</td>
+            <td>32</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <script>
+        function addAttendee() {
+            var attendeeFullName = document.getElementById("attFullName").value;
+            attendee.push(attFullName);
+            attendee.sort();
+
+            displayAttendees();
+            document.getElementById("attFullName").value = "";
+        }
+
+        function displayAttendees() {
+            var body = document.getElementById("attendeeTableBody");
+            for (var i = 0; i < attendee.length; i++) {
+                var row = document.createElement("tr");
+                var cell = document.createElement("td");
+                cell.innerHTML = attendees[i];
+                body.appendChild(row);
+                row.appendChild(cell);
+                //document.getElementById("attFullName").value = "";//
+            }
+
+        }
+
     </script>
+
 </body>
-    </html>
+
+</html>
